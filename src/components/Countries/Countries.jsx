@@ -15,12 +15,23 @@ const Countries = () => {
     }, []);
 
     const handlevisitedCountry = (country) => {
-        console.log("Connected");
+        const newVisitedCountry = [...visitedCountry, country];
+        setvisitedCountry(newVisitedCountry);
     }
 
     return (
         <div>
             <h2>Countries:  {countries.length} </h2>
+            <div>
+                <h4>Visited Country: {visitedCountry.length} </h4>
+                <ul>
+                    <li>
+                        {
+                            visitedCountry.map(country => <li key={country.cc3}> {country.name.common} </li>)
+                        }
+                    </li>
+                </ul>
+            </div>
             <div className="country-container">
             {
                 countries.map(allCountry => <Country 

@@ -12,8 +12,7 @@ const Country = ({country, handlevisitedCountry}) => {
         setVisit(!visit);
     }
     
-    console.log(handlevisitedCountry);
-
+    
     return (
         <div className={`countryStyle && ${visit ? 'visited':'non-visited'} `}>
             <h3 style={{color: visit ? 'black' : 'white'}}>Name: {name?.common} </h3>
@@ -22,7 +21,7 @@ const Country = ({country, handlevisitedCountry}) => {
             <p>Area: {area} </p>
             <p><small>Code: {cca3} </small></p>
             <button onClick={handleVisit}> {visit ? 'Traveled' : 'Going'} </button>
-            <button>Mark Visited</button>
+            <button onClick={()=>handlevisitedCountry(country)}>Mark Visited</button>
         </div>
     );
 };
