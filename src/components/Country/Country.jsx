@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './Country.css'
+import CountryDetail from '../CountryDetail/CountryDetail';
 
 const Country = ({country, handlevisitedCountry, handleVisitedFlag}) => {
     
@@ -23,6 +24,12 @@ const Country = ({country, handlevisitedCountry, handleVisitedFlag}) => {
             <button onClick={()=>handlevisitedCountry(country)}>Mark Visited</button>
             <br />
             <button onClick={()=>handleVisitedFlag(country.flags.png)}>Visit Flag</button>
+            <hr />
+            <CountryDetail>
+                country = {country}
+                handlevisitedCountry = {handlevisitedCountry}
+                handleVisitedFlag = {handleVisitedFlag}
+            </CountryDetail>
         </div>
     );
 };
